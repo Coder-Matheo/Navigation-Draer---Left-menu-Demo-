@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TabLayout with Navigation Drawer Demo</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="navigation_drawer_open">open drawer navigation</string>
+    <string name="navigation_drawer_close">close drawer navigation</string>
+</resources>
