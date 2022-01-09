@@ -8,13 +8,18 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
@@ -41,6 +46,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     new Message_fragment()).commit();
             navigationView.setCheckedItem(R.id.nav_message);
         }
+
+        //Header of Navigation Drawer
+        View header = navigationView.getHeaderView(0);
+        ImageView btn = header.findViewById(R.id.img_profile);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG, "onClick: ");
+            }
+        });
+
+
+
 
 
     }
@@ -78,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_send:
                 Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
                 break;
+
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
